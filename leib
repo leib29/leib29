@@ -1,0 +1,30 @@
+// Variáveis para o desenho
+let isDrawing = false;
+
+function setup() {
+  createCanvas(800, 600);
+  background(255); // Define o fundo como branco
+}
+
+function draw() {
+  if (isDrawing) {
+    // Obtém a posição atual do mouse
+    let x = mouseX;
+    let y = mouseY;
+
+    // Desenha uma linha no canvas
+    stroke(0); // Define a cor do traço como preto
+    strokeWeight(4); // Define a espessura do traço
+    line(pmouseX, pmouseY, x, y);
+  }
+}
+
+function mousePressed() {
+  // Começa a desenhar quando o mouse é pressionado
+  isDrawing = true;
+}
+
+function mouseReleased() {
+  // Para de desenhar quando o mouse é solto
+  isDrawing = false;
+}
